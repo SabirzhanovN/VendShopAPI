@@ -28,6 +28,7 @@ INSTALLED_APPS = [
 
     # apps
     'catalog.apps.CatalogConfig',
+    'store.apps.StoreConfig',
 
     # frameworks
     'rest_framework',

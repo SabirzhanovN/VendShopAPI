@@ -11,7 +11,7 @@ class ProductViewSet(viewsets.ModelViewSet):
     PUT, PATCH, DELETE, POST available only via pk.
     """
     serializer_class = ProductSerializer
-    permission_classes = (IsAdminUser,)
+    # permission_classes = (IsAdminUser,)
     queryset = Product.objects.all()
 
 

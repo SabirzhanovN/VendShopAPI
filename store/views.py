@@ -37,9 +37,18 @@ class ProductListDetailAPIView(viewsets.GenericViewSet,
 
 
 class TransactionAPIView(generics.CreateAPIView):
+    """
+    View for only make POST request by client to create transaction.
+    """
     serializer_class = TransactionSerializer
 
     def create(self, request, *args, **kwargs):
+        """
+        Checks field validation.
+
+        If the product exists, is in stock and the user has enough money,
+        then it writes changes to the database and returns the change.
+        """
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 

@@ -8,5 +8,6 @@ router.register('products', views.ProductListDetailAPIView)
 
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('transaction/', views.TransactionAPIView.as_view(), name='transaction')
 ]
